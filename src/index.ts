@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
-mongoose.connect("mongodb+srv://rubenthorstenson:Ux1ZjdPQXUJQoTDU@cluster0.i8wsdko.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGODB || "localhost:3000")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
